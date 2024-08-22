@@ -19,7 +19,7 @@ const props = defineProps<{
   dentistSpecialty: string;
 }>();
 
-const profileImage = computed<string>(() => DEV_URL.APP.concat(props.imagePath));
+const profileImage = computed<string>(() => DEV_URLS.get(PLATFORM_CATEGORY.APP)!.concat(props.imagePath));
 const dentistTitle = computed<string>(() => `${props.dentistRole} ${props.dentistName}`);
 
 </script>

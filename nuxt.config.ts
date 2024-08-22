@@ -25,12 +25,6 @@ export default defineNuxtConfig({
   },
   nitro: {
     routeRules: {
-      "/profile/**": {
-        cache: {
-          swr: true,
-          maxAge: 3600
-        }
-      },
       "/images/**": {
         headers: {
           'Cache-Control': 'public, max-age=3600'

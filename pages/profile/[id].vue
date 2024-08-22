@@ -4,13 +4,15 @@
     :image-path="picture"
     :dentist-role="role"
     :dentist-specialty="specialty"
-  ></dentist-profile-details>
+  />
 </template>
 
 <script lang="ts" setup>
 const route = useRoute();
 const dentistProfileId = computed<string>(() => route.params.id.toString());
-const { data: response, error } = await useFetch<DentistApiReponse, DentistApiError>(DEV_URL.API.concat(dentistProfileId.value));
+const { data: response, error } = await useFetch<DentistApiReponse, DentistApiError>(DEV_URL.API.concat(dentistProfileId.value), {
+  cache: 'force-cache'
+});
 
 if (!response.value) {
   handleDentistNotFoundError(error.value as NonNullable<DentistApiError>);

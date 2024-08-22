@@ -4,8 +4,6 @@ export type DentistApiError = {
 }
 
 export const handleDentistNotFoundError = (error: DentistApiError): never => {
-  console.log(error)
-
   const responseNotFoundError = createError<DentistApiError>({
     status: error.statusCode,
     statusMessage: error.statusMessage,

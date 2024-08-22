@@ -10,6 +10,11 @@ export default defineNuxtConfig({
     },
     viewer: true,
   },
+  app: {
+    head: {
+      title: 'Desafio CATe - João Victor',
+    },
+  },
   imports: {
     dirs: [
       "enums",

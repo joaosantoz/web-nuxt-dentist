@@ -27,7 +27,11 @@ export default <Partial<Config>> {
         xl: ['24px', '28px']
       },
       screens: {
-        "mobile-sm": '360px'
+        media: '254px',
+        mobile: '360px',
+        gallery: '778px',
+        text: '980px',        
+        desktop: '1180px',
       }
     },
   },

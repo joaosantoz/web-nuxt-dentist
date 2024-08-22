@@ -10,4 +10,19 @@ export default defineNuxtConfig({
     },
     viewer: true,
   },
+  imports: {
+    dirs: [
+      "enums",
+      "errors",
+      "models",
+      "constants"
+    ]
+  },
+  routeRules: {
+    "/profile/**": {
+      cache: {
+        maxAge: 60 * 60,
+      }
+    }
+  }
 });

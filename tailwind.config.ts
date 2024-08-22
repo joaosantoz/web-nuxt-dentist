@@ -9,6 +9,14 @@ export default <Partial<Config>> {
         "dark-blue": "#263238",
         "light-grey": "#ECEFF1"
       },
+      backgroundImage: {
+        "white-shadow": `
+          linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, 
+            rgba(255, 255, 255, .4) 33%, 
+            rgba(255, 255, 255, 0.5) 66%, 
+            rgba(255, 255, 255, 1) 100%)
+        ` 
+      },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif']
       },

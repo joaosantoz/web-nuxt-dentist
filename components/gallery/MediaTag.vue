@@ -23,7 +23,9 @@ const emit = defineEmits<{
   (event: 'change-tag', tagTitle: TAG_MEDIA): void;
 }>();
 
-const emitEventChangeTag = () => {
+const emitEventChangeTag = (): void => {
+  if (props.tagActive) return;
+
   emit('change-tag', props.tagTitle);
 };
 

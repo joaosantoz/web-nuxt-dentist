@@ -8,7 +8,7 @@
         <h4 class="text-white text-md font-semibold ml-2">{{ headerTitle }}</h4>
       </div>
       <icons-svg-close
-        @click="emit('closeModal')"
+        @click="emit('close-modal')"
         class="cursor-pointer hover:scale-105 transition-all" />
     </div>
   </header>
@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 const emit = defineEmits<{
-  (event: 'closeModal'): void;
+  (event: 'close-modal'): void;
 }>();
 
 const headerTitle = inject<string>(PROVIDER_KEY.PROFILE_TITLE);

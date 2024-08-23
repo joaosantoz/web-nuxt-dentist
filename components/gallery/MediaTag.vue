@@ -20,11 +20,11 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (event: 'changeTag', tagTitle: TAG_MEDIA): void;
+  (event: 'change-tag', tagTitle: TAG_MEDIA): void;
 }>();
 
 const emitEventChangeTag = () => {
-  emit('changeTag', props.tagTitle);
+  emit('change-tag', props.tagTitle);
 };
 
 const lengthText = computed<string>(() => `(${props.tagCount})`);

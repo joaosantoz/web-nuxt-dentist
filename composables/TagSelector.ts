@@ -13,7 +13,7 @@ export const useTagSelector = (): TagSelectorComposable => {
     activeTag.value = newTag;
   };
 
-  const tagData = computed(() => {
+  const tagData = computed<{ title: TAG_MEDIA; mediaType: MEDIA_TYPE[]; count: number }[]>(() => {
     return [
       {
         title: TAG_MEDIA.ALL,
@@ -49,5 +49,5 @@ export type TagSelectorComposable = {
   activeTag: Ref<TAG_MEDIA>;
   setActiveTag: (tag: TAG_MEDIA) => void;
   activeMediaType: ComputedRef<MEDIA_TYPE[]>;
-  tagData: ComputedRef<{ title: TAG_MEDIA; count: number }[]>;
+  tagData: ComputedRef<{ title: TAG_MEDIA; mediaType: MEDIA_TYPE[]; count: number }[]>;
 };

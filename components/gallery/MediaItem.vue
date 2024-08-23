@@ -17,7 +17,7 @@
       </video>
       <icons-svg-play
         v-if="mediaTypeVideo"
-        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2" />
+        class="absolute md:h-12 md:w-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2" />
     </div>
   </gallery-media-modal>
 </template>

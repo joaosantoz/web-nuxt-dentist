@@ -6,6 +6,7 @@
     :dentist-specialty="specialty" />
   <sections-profile-description :profile-description="description" />
   <sections-profile-gallery />
+  <sections-profile-trust :trust="trustStatus" />
 </template>
 
 <script lang="ts" setup>
@@ -24,7 +25,7 @@ if (!response.value) {
   handleDentistNotFoundError(error.value as NonNullable<DentistApiError>);
 }
 
-const { name, picture, role, specialty, description, medias } = response.value!.dentist as DentistProfile;
+const { name, picture, role, specialty, description, medias, trustStatus } = response.value!.dentist as DentistProfile;
 
 const profileImage = computed<string>(() => DEV_URLS.get(PLATFORM_CATEGORY.APP)!.concat(picture));
 const dentistTitle = computed<string>(() => `${role} ${name}`);
@@ -32,6 +33,7 @@ const dentistTitle = computed<string>(() => `${role} ${name}`);
 provide<MediaInfo[]>(PROVIDER_KEY.MEDIA_LIST, medias);
 provide<ComputedRef<string>>(PROVIDER_KEY.PROFILE_TITLE, dentistTitle);
 provide<ComputedRef<string>>(PROVIDER_KEY.PROFILE_PHOTO, profileImage);
+provide<TrustStatus>(PROVIDER_KEY.TRUST_STATUS, trustStatus);
 </script>
 
 <style>

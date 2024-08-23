@@ -3,7 +3,7 @@
     <div v-if="!componentActive" class="bg-white-shadow h-full w-full absolute -top-16 left-0"></div>
       <div @click="componentActive = !componentActive" class="flex cursor-pointer h-full w-full items-center justify-center">
       <h3 class="mr-2 v-attr text-md">{{ buttonText }}</h3>
-      <icons-arrow-show :class="{ 'rotate-180': componentActive }" class="transition-all"  />
+      <icons-svg-arrow :class="{ 'rotate-180': componentActive }" class="transition-all"  />
     </div>
   </div>
 </template>

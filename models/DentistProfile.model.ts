@@ -1,6 +1,6 @@
 export type DentistApiReponse = {
   dentist: DentistProfile;
-}
+};
 
 export type DentistProfile = {
   id: number;
@@ -11,16 +11,16 @@ export type DentistProfile = {
   description: string;
   medias: MediaInfo[];
   trustStatus: TrustStatus;
-}
+};
 
 export type MediaInfo = {
   mediaType: MEDIA_TYPE;
   url: string;
-}
+};
 
 export type TrustStatus = {
   statusLevel: number;
   isVerified: boolean;
   secureContact: boolean;
   secureProfile: boolean;
-}
+};

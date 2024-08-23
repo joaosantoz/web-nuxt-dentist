@@ -19,12 +19,16 @@ export const useGalleryLoader = (): GalleryLoaderComposable => {
   });
 
   const filterMediaList = (mediaFilters: MEDIA_TYPE[]): void => {
-    mediaToShow.value = [...baseList.value.filter((media) => mediaFilters.includes(media.mediaType))];
+    if (!showLoadMoreButton.value) {
+      mediaToShow.value = [...baseList.value.filter((media) => mediaFilters.includes(media.mediaType))];
+    }
+    mediaToShow.value = [...baseList.value.filter((media) => mediaFilters.includes(media.mediaType)).slice(0, GRID_SIZE)];
   };
 
   const loadMoreMedia = (mediaFilters: MEDIA_TYPE[]): void => {
-    const newMediaValues = [...baseList.value.slice(filteredGalleryList.value.length, mediaToShow.value.length + GRID_SIZE)];
-    const filteredNewValues = newMediaValues.filter((listItem) => mediaFilters.includes(listItem.mediaType));
+    const newMediaValues = [...baseList.value.filter((listItem) => mediaFilters.includes(listItem.mediaType))];
+
+    const filteredNewValues = newMediaValues.slice(filteredGalleryList.value.length, newMediaValues.length + GRID_SIZE);
 
     mediaToShow.value = [...filteredGalleryList.value, ...filteredNewValues];
   };
